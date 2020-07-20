@@ -1,0 +1,63 @@
+name: bingo
+description: A new Flutter project.
+
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  
+  font_awesome_flutter: ^8.8.1
+  cloud_firestore: ^0.13.7
+  image_picker: ^0.6.7+3
+  firebase_storage: ^3.1.6
+  firebase_auth: ^0.16.1
+  google_sign_in: ^4.5.1
+  geolocator: ^5.3.2+2
+  provider: ^4.1.2
+  flutter_spinkit: ^4.1.2+1
+  flutter_facebook_login: ^3.0.0
+  http: ^0.12.1
+  google_fonts: ^1.1.0
+  uuid: ^2.1.0
+  image: ^2.1.11
+  animator: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
+flutter:
+
+ 
+  uses-material-design: true
+
+  
+  assets:
+    - assets/images/ 
+     
+
+  
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/font/Raleway-Regular.ttf
+    - family: Aby
+      fonts:
+        - asset: assets/font/Aby-Regular.ttf 
+  #   fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+

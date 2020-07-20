@@ -1,5 +1,6 @@
 import 'package:bingo/model/Product.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetails extends StatefulWidget {
   final Product product;
@@ -15,11 +16,9 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.product.producteName),
+        title: Text(widget.product.producteName,style: GoogleFonts.,),
       ),
-      body: Column(
-        children: <Widget>[Text(widget.product.user.location)],
-      ),
+      
     );
   }
 }

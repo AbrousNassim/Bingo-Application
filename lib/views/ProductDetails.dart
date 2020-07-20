@@ -16,9 +16,11 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.product.producteName,style: GoogleFonts.,),
+        title: Text(
+          widget.product.producteName,
+          style: null,
+        ),
       ),
-      
     );
   }
 }

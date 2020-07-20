@@ -18,7 +18,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         title: Text(
           widget.product.producteName,
-          style: null,
+          style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
         ),
       ),
     );

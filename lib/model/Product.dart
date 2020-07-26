@@ -5,7 +5,9 @@ class Product {
   String producteId = '';
   String producteName = 'name';
   String producteDescription = '';
-  String producteUrlPic = '';
+  String producteUrlPic1 = '';
+  String producteUrlPic2 = '';
+  String producteUrlPic3 = '';
   int productPrice = 1;
   String productEtat = '';
   var categorie;
@@ -18,7 +20,9 @@ class Product {
       this.productEtat,
       this.categorie,
       this.producteDescription,
-      this.producteUrlPic,
+      this.producteUrlPic1,
+      this.producteUrlPic2,
+      this.producteUrlPic3,
       this.date,
       this.user});
 }

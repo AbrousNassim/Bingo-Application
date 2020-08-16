@@ -15,7 +15,6 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
-  bool isLike = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +73,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           fontWeight: FontWeight.w300,
                           color: grey,
                         )),
-                    Text('${widget.product.user.selNumber}',
+                    Text('${widget.product.user.phoneNumber}',
                         style: GoogleFonts.roboto(
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -201,14 +200,15 @@ class _ProductDetailsState extends State<ProductDetails> {
             child: IconButton(
               padding: EdgeInsets.only(right: 0),
               icon: Icon(Icons.favorite_border,
-                  color: isLike ? Colors.red : Colors.grey, size: 30),
+                  color: widget.product.isLiked ? Colors.red : Colors.grey,
+                  size: 30),
               onPressed: () {
                 setState(() {
-                  isLike = !isLike;
-                  if (isLike) {
+                  widget.product.isLiked = !widget.product.isLiked;
+                  if (widget.product.isLiked) {
                     print('gg ');
                   }
-                  if (!isLike) {
+                  if (!widget.product.isLiked) {
                     print('pas gg');
                   }
                 });

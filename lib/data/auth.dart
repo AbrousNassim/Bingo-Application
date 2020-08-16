@@ -1,3 +1,4 @@
+import 'package:bingo/data/database.dart';
 import 'package:bingo/model/User.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -10,15 +11,18 @@ class Auth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   GoogleSignIn _googleSignIn = GoogleSignIn();
   final FacebookLogin _facebookLogin = FacebookLogin();
+  final DatabasseService dB = DatabasseService();
   User userFromFireBase(FirebaseUser user) {
     return user != null ? User(uid: user.uid) : null;
   }
 
-  Future<User> singUpEmail(String name, String email, String password) async {
+  Future singUpEmail(String name, String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email.trim(), password: password);
       FirebaseUser user = result.user;
+      await dB.updateUserData(user.uid, name, 'PHOTOOOOO', email, '', '');
+      return user;
     } catch (signUpError) {
       if (signUpError is PlatformException) {
         if (signUpError.code == 'ERROR_EMAIL_ALREADY_IN_USE') {}
@@ -32,7 +36,7 @@ class Auth {
           email: email.trim(), password: password);
 
       FirebaseUser user = resolt.user;
-      print(user);
+
       return user;
     } catch (e) {
       print("problemmm sing in");
@@ -51,6 +55,8 @@ class Auth {
     );
     AuthResult result = (await _auth.signInWithCredential(authCredential));
     FirebaseUser user = result.user;
+    await dB.updateUserData(user.uid, user.displayName, user.photoUrl,
+        user.email, user.phoneNumber, '');
   }
 
   Future facebookSingIn() async {
@@ -60,12 +66,15 @@ class Auth {
         final token = result.accessToken.token;
 
         final graphResponse = await http.get(
-            'https://graph.facebook.com/v2.12/me?fields=name,picture,email&access_token=${token}');
+            'https://graph.facebook.com/v2.12/me?fields=name,picture,email&access_token=$token');
 
         AuthCredential fbCredential =
             FacebookAuthProvider.getCredential(accessToken: token);
         AuthResult resulta = (await _auth.signInWithCredential(fbCredential));
         FirebaseUser user = resulta.user;
+        await dB.updateUserData(user.uid, user.displayName, user.photoUrl,
+            user.email, user.phoneNumber, '');
+
         print(user);
         print("-----------------------------------------------------");
         final profile = JSON.jsonDecode(graphResponse.body);

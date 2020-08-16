@@ -1,6 +1,5 @@
 import 'package:bingo/constant/Color.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'Categories/electronique.dart';
 import 'Categories/informatique.dart';
 import 'Categories/maison.dart';

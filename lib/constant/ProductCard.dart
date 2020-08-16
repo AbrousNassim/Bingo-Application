@@ -1,5 +1,6 @@
 import 'package:bingo/constant/Color.dart';
 import 'package:bingo/model/Product.dart';
+import 'package:bingo/views/Favorite.dart';
 import 'package:bingo/views/ProductDetails.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,8 +20,7 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
-  bool isLike = false;
-
+  Favorite fav = Favorite();
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -81,17 +81,19 @@ class _ProductCardState extends State<ProductCard> {
                                   child: IconButton(
                                     padding: EdgeInsets.only(right: 0),
                                     icon: Icon(Icons.favorite_border,
-                                        color:
-                                            isLike ? Colors.red : Colors.grey,
+                                        color: widget.product.isLiked
+                                            ? Colors.red
+                                            : Colors.grey,
                                         size: 24),
                                     onPressed: () {
                                       setState(() {
-                                        isLike = !isLike;
-                                        if (isLike) {
-                                          print('gg ');
+                                        widget.product.isLiked =
+                                            !widget.product.isLiked;
+                                        if (widget.product.isLiked) {
+                                          fav.favorite.add(widget.product);
                                         }
-                                        if (!isLike) {
-                                          print('pas gg');
+                                        if (!widget.product.isLiked) {
+                                          //fav.favorite.remove(widget.product);
                                         }
                                       });
                                     },

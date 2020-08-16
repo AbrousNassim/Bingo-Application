@@ -1,4 +1,6 @@
+import 'package:bingo/views/LaNote.dart';
 import 'package:bingo/views/auth/Authentification.dart';
+import 'package:bingo/views/homePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'constant/Loading.dart';
@@ -15,7 +17,7 @@ class Wrapper extends StatelessWidget {
       if (user == null) {
         return Authentification();
       } else {
-        return Pages();
+        return HomePage();
       }
     } catch (e) {
       return SnipKit();

@@ -23,7 +23,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -37,7 +37,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -51,7 +51,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -65,7 +65,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -79,7 +79,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -93,7 +93,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -107,7 +107,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -121,7 +121,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alger,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
     Product(
         categorie: '',
         productPrice: 1500,
@@ -135,7 +135,7 @@ class _InformatiqueState extends State<Informatique> {
         user: User(
             location: 'Alge r,oran',
             name: 'Abrous Nassim',
-            selNumber: '0557059399')),
+            phoneNumber: '0557059399')),
   ];
   @override
   Widget build(BuildContext context) {

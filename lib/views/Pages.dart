@@ -1,4 +1,5 @@
 import 'package:bingo/constant/Color.dart';
+import 'package:bingo/model/User.dart';
 import 'package:flutter/material.dart';
 import 'Categorie.dart';
 import 'Profile.dart';
@@ -15,7 +16,12 @@ class PagesState extends State<Pages> {
   int _selectedTab = 0;
   final _pageOptions = [
     HomePage(),
-    Profile(),
+    Profile(
+      user: User(
+          email: 'nas897700@Gmail.com',
+          name: 'Nassim Abrous',
+          photoUrl: 'http://via.placeholder.com/413x275'),
+    ),
     Categorie(),
   ];
   @override
@@ -38,7 +44,7 @@ class PagesState extends State<Pages> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
-            title: Text('Categories'),
+            title: Text('favorite'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
